@@ -1,0 +1,15 @@
+<form (submit)="onUpdate(updatedtask._id)" (click)='onUpdate($event)'>
+    <h4 class="bg-light my-3 p-2">Edit a Task: </h4>
+    <div class="form-group row mx-3">
+        <label> Task title:</label>
+        <div class="col">
+            <input class="form-control" type="text" name="updatedtask.title" [(ngModel)]="updatedtask.title">
+        </div>
+        <label> Task description:</label>
+        <div class="col">
+            <input class="form-control" type="text" name="updatedtask.description" [(ngModel)]="updatedtask.description">
+        </div>
+        <input name="updatedtask._id" type="hidden" [(ngModel)]="updatedtask._id">
+    </div>
+    <input type="submit" value="Update Task" class="btn btn-light mb-5">
+</form>

@@ -1,0 +1,42 @@
+<div class= "container border mt-5">
+  <div class="jumbotron">
+    <h1 class="display-4">{{title}}</h1>
+  </div>
+
+  <form (submit) = "onSubmit()">
+    <div class="form-group row mx-3">        
+      <label> Task title:</label>
+      <div class="col"> 
+          <input type="text" class="form-control" name="newTask.title" [(ngModel)]="newTask.title"/>
+      </div>
+      <label> Task description:</label>
+      <div class="col">
+          <input  type="text" class="form-control" name="newTask.description" [(ngModel)]="newTask.description"/>
+      </div>
+    </div>
+    <input type="submit" value="Create a Task" class="btn btn-success py-0 ml-3">
+  </form>
+
+  <div class="row mx-auto">
+    <button  type ="button" class=" col-6 btn btn btn-outline-secondary my-5 mx-auto" (click) = 'onClickShowTasks()'>View all Tasks</button>
+  </div>
+
+  <ul class="col-8 mx-auto mb-5 border">
+      <li class="row border-bottom py-1" *ngFor = 'let task of tasks'>
+        <div class="col-5">{{task.title}}</div>
+        <div class="col-1 mx-auto"><button (click) = 'onClickShowTask(task._id)' type ="button" class="btn btn-success text-white btn-sm py-0 mr-3">View</button></div>
+        <div class="col-1 mx-auto"><button (click) = 'onClickEditTask(task._id)' type ="button" class="btn btn-secondary text-white btn-sm py-0">Edit</button></div>
+        <div class="col-1 mx-auto"><button (click) = 'onDelete(task._id)' type ="button" class="btn btn-light text-danger btn-sm py-0">Delete</button></div>
+      </li>
+  </ul>
+    <div *ngIf='tsk'>
+      <h6 class = "mt-5 justify-content-center bg-danger text-white p-2">Task: {{tsk.title}}</h6>
+      <p class = "ml-2 mb-5">description: {{tsk.description}}</p>
+    </div>
+
+    <app-task *ngIf='updatedtask' [updatedtask] = 'updatedtask' (taskupdated) = 'tasksupdated($event)'></app-task>
+
+</div>
+
+
+<router-outlet></router-outlet>
