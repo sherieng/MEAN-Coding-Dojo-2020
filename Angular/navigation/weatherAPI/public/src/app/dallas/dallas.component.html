@@ -1,0 +1,17 @@
+<div class="container-fluid mt-5">
+    <div class="row mt-4 mb-3">
+        <h1 class="mx-auto text-mute">Dallas, TX</h1>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-3 offset-md-3 mt-5">
+            <h6>Humidity: {{dallas.main.humidity}} </h6>
+            <h6>Current Temperature: {{dallas.main.temp}} &#8457;</h6>
+            <h6>High: {{dallas.main.temp_max}} &#8457;</h6>
+            <h6>Low: {{dallas.main.temp_min}} &#8457;</h6>
+            <h6>Stauts: {{dallas.weather[0].description}}</h6>
+        </div>
+        <div class="ml-5 col-5">
+            <img style="width: 400px;" src="https://images.pexels.com/photos/2051002/pexels-photo-2051002.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="dallas" >
+        </div>
+    </div>
+</div>

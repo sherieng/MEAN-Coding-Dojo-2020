@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row mt-4">
+    <h1 class="mx-auto display-4">Dojo Weather Forecast</h1>
+  </div>
+  <div class="row my-4 mx-auto">
+    <button type="button" class="col btn btn-link text-dark border-right" [routerLink]="['/seattle']">Seattle</button>
+    <button type="button" class="col btn btn-link text-dark border-right"[routerLink]="['/sanjose']">San Jose</button>
+    <button type="button" class="col btn btn-link text-dark border-right"[routerLink]="['/burbank']">Burbank</button>
+    <button type="button" class="col btn btn-link text-dark border-right"[routerLink]="['/dallas']">Dallas</button>
+    <button type="button" class="col btn btn-link text-dark border-right"[routerLink]="['/washington']">Washington D.C.</button>
+    <button type="button" class="col btn btn-link text-dark"[routerLink]="['/chicago']">Chicago</button>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

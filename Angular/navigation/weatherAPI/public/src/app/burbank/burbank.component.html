@@ -1,0 +1,17 @@
+<div class="container-fluid mt-5">
+    <div class="row mt-4 mb-3">
+        <h1 class="mx-auto text-mute">Burbank, CA</h1>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-3 offset-md-3 mt-5">
+            <h6>Humidity: {{burbank.main.humidity}} </h6>
+            <h6>Current Temperature: {{burbank.main.temp}} &#8457;</h6>
+            <h6>High: {{burbank.main.temp_max}} &#8457;</h6>
+            <h6>Low: {{burbank.main.temp_min}} &#8457;</h6>
+            <h6>Stauts: {{burbank.weather[0].description}}</h6>
+        </div>
+        <div class="ml-5 col-5 mb-5">
+            <img style="width: 250px;" src="https://images.pexels.com/photos/4449622/pexels-photo-4449622.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="burbank" >
+        </div>
+    </div>
+</div>

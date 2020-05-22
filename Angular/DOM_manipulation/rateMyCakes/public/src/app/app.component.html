@@ -1,0 +1,67 @@
+<div class="container-fluid border bg-warning rounded">
+  <div class="jumbotron mt-2">
+    <b><h1 class="display-2 text-dark mb-3">{{title}}</h1></b>
+
+  <!-- the create section -->
+    <div class="col-10 mx-auto">
+      <form (submit)="onSubmit()">
+        <h4 class="border-bottom mb-3 text-success">Submit a Cake to be Rated</h4>
+        <div class="form-group row mx-3">
+          <h6><label> Baker's Name: </label></h6>
+          <div class="col-md-4">
+            <input type="text" class="form-control" name="newCake.name" [(ngModel)]="newCake.name" />
+          </div>
+          <h6><label> Image Url:</label></h6>
+          <div class="col-md-4">
+            <input type="text" class="form-control" name="newCake.url" [(ngModel)]="newCake.url" />
+          </div>
+          <div class="col-md-1">
+            <input type="submit" value="Submit" class="btn btn-secondary ml-3">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- view all cakes -->
+    <div class="container my-5 p-0">
+      <div class=" row p-0 m-0">
+      <div id="scrollin" class="col-8" >
+        <div class="row">
+          <div  class="col-md-6 my-auto border-dark"  *ngFor='let cake of cakes' >
+            <form (submit)="onSubmitRating(cake)">
+              <div class="row mx-auto">
+                <img class="mx-auto" style="width: 300px" src="{{cake.url}}" (click) = 'showACake(cake._id)' alt="cake"/>
+              </div>
+              <h6 class="mt-2 ml-4">Baker's Name: {{cake.name}}</h6>
+              <div class="form-group row mx-auto">
+                <h6 class="col-6 ml-2"><label>Rate the cake: </label></h6>
+                  <select class="col-4 form-control" name="newRating.rating" [(ngModel)] ="cake.newRating.rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5" selected>5</option>
+                  </select>
+              </div>
+              <h6>Comments:</h6>
+              <div class="row">
+                <textarea rows="2" type="text" class="form-control m-3" name="newRating.comment" [(ngModel)] ="cake.newRating.comment"></textarea>
+                
+              </div>
+              <div class="row">
+                <input type="submit" value="Rate!" class="col-md-2 offset-md-9 btn btn-success btn-sm" />
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <app-cake *ngIf='selectedCake' [cake] = 'selectedCake' [avg] = 'average'></app-cake>
+      </div>
+    </div>
+    </div>
+
+  </div>
+</div>
+<router-outlet></router-outlet>

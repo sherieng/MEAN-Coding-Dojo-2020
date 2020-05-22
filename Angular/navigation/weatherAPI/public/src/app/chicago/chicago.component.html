@@ -1,0 +1,17 @@
+<div class="container-fluid mt-5">
+    <div class="row mt-4 mb-3">
+        <h1 class="mx-auto text-mute">Chicago, IL</h1>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-3 offset-md-3 mt-5">
+            <h6>Humidity: {{chicago.main.humidity}} </h6>
+            <h6>Current Temperature: {{chicago.main.temp}} &#8457;</h6>
+            <h6>High: {{chicago.main.temp_max}} &#8457;</h6>
+            <h6>Low: {{chicago.main.temp_min}} &#8457;</h6>
+            <h6>Stauts: {{chicago.weather[0].description}}</h6>
+        </div>
+        <div class="ml-5 col-5 mb-5">
+            <img style="width: 400px;" src="https://images.pexels.com/photos/1823680/pexels-photo-1823680.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="chicago" >
+        </div>
+    </div>
+</div>

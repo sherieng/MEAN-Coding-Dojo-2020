@@ -1,0 +1,17 @@
+<div class="container-fluid mt-5">
+    <div class="row mt-4 mb-3">
+        <h1 class="mx-auto text-mute">San Jose, CA</h1>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-3 offset-md-3 mt-5">
+            <h6>Humidity: {{sanjose.main.humidity}} </h6>
+            <h6>Current Temperature: {{sanjose.main.temp}} &#8457;</h6>
+            <h6>High: {{sanjose.main.temp_max}} &#8457;</h6>
+            <h6>Low: {{sanjose.main.temp_min}} &#8457;</h6>
+            <h6>Stauts: {{sanjose.weather[0].description}}</h6>
+        </div>
+        <div class="ml-5 col-5 mb-5">
+            <img style="width: 300px;" src="https://images.pexels.com/photos/4390589/pexels-photo-4390589.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="san jose" >
+        </div>
+    </div>
+</div>
