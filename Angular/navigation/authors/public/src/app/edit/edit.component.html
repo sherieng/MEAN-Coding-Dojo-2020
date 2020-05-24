@@ -1,0 +1,11 @@
+<div class="container">
+    <h4>Edit an Author:</h4>
+    <form (submit)="onSubmit(showAnAuthor._id)">
+        <label>Name: <div *ngIf = "error">
+            <span class="text-danger">Name must be at least 3 characters long.</span>
+        </div></label>
+        <input class="form-control" type="text" name="showAnAuthor.name" [(ngModel)]="showAnAuthor.name">
+        <input type="submit" value="Submit" class="btn btn-primary mt-3">
+    </form>
+</div>
+

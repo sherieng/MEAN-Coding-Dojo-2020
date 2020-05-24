@@ -1,0 +1,19 @@
+<div class="container">
+    <h4>We have quotes by:</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Author</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr *ngFor="let auth of authors"> 
+                <td>{{auth.name}}</td> 
+                <td><button type="button" class="btn btn-success py-1" [routerLink]="['/show-q/'+ auth._id]">View Quotes</button>
+                    <button type="button" class="btn btn-primary py-1 ml-5" [routerLink]="['/edit/'+ auth._id]">Edit</button>
+                    <button (click) = 'onDelete(auth._id)' type ="button" class="ml-5 btn btn-danger py-1">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

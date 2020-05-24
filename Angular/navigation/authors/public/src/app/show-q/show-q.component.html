@@ -1,0 +1,22 @@
+<div class="container">
+    <h4>Quotes by: {{quotes.name}}</h4>
+    <button type="button" class="btn btn-info" [routerLink]="['/new-q/'+quotes._id]">Add a Quote</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Quote</th>
+                <th scope="col">Votes</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr *ngFor="let q of quotes.quotes"> 
+                <td>{{q.quote}}</td> 
+                <td>{{q.vote}}</td>
+                    <td><button (click) = 'onUpVote(q)' type="button" class="btn btn-success py-1">Vote Up</button>
+                    <button (click) = 'onDownVote(q)' type="button" class="btn btn-dark ml-5 py-1">Vote Down</button>
+                    <button (click) = 'onDelete(q)' type ="button" class="ml-5 btn btn-danger py-1">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

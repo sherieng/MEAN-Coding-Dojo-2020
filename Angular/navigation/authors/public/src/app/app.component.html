@@ -1,0 +1,8 @@
+<nav class="navbar navbar-light bg-light">
+  <h1 class="navbar-brand display-4">Favortie Authors</h1>
+  <button *ngIf =  "_router.url === '/main'" type="button" class="btn btn-info" [routerLink]="['/new']">Add an Author!</button>
+  <button *ngIf =  "_router.url != '/main'" type="button" class="btn btn-info" [routerLink]="['/main']">Home</button>
+</nav>
+
+
+<router-outlet></router-outlet>

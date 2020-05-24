@@ -1,0 +1,12 @@
+<div class="container">
+    <h4>Add a New Quote:</h4>
+    <form (submit)="onSubmit()">
+        <label>Provide a quote by : 
+        <div *ngIf = "error">
+            <span class="text-danger">Name must be at least 3 characters long.</span>
+        </div></label>
+        <input class="form-control" type="text" name="newQuote.quote" [(ngModel)]="newQuote.quote">
+        <input type="submit" value="Submit" class="btn btn-primary mt-3">
+        <button type="button" class="btn btn-info mt-3 ml-3" [routerLink]="['/main']">Cancel</button>
+    </form>
+</div>
